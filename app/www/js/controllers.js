@@ -1,9 +1,16 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, socket) {
+.controller('DashCtrl', function($scope, $cordovaVibration, socket) {
   $scope.sendBuzz = function(){
+
+    // send event
     socket.emit('buzz', 'BUZZ BUZZ');
-  }
+
+    // listen for event
+    socket.on('vibrate', function(){
+      $cordovaVibration.vibrate(100);
+    });
+  };
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {

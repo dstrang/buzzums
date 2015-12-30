@@ -68,7 +68,7 @@ angular.module('starter.services', [])
             callback.apply(socket, args);
           }
         });
-      })
+      });
     }
   };
 });

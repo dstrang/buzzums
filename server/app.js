@@ -19,6 +19,7 @@ io.on('connection', function(client) {
 
     client.on('buzz', function(data){
     	console.log(data);
+    	client.emit('vibrate');
     });
 
 });
